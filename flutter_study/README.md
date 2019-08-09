@@ -1,6 +1,6 @@
 # flutter_study
 
-A new Flutter project.
+【Flutter — 从入门到实践（gitchat; by Ray ）】 学习笔记.  
 
 ## Getting Started
 
