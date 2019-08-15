@@ -46,6 +46,7 @@ flutter:
   #  - images/a_dot_ham.jpeg
   assets:
     - lib/images/assets_image.jpg
+    - lib/images/icon_wx.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
