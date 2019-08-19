@@ -6,7 +6,8 @@ import 'package:flutter/material.dart';
 // import 'flutter_04/icon_widget.dart';
 // import 'flutter_04/alert_dialog_widget.dart';
 // import 'flutter_05/text_field_widget.dart';
-import 'flutter_05/form_widget.dart';
+// import 'flutter_05/form_widget.dart';
+import 'flutter_06/row_widget_sample.dart';
 
 void main() => runApp(MyApp());
 
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: FormWidgetSample() //MyHomePage(title: 'Flutter Demo Home Page'),
+      home: RowWidgetSample2() //MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
