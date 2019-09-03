@@ -12,7 +12,7 @@ import 'package:flutter/material.dart';
 // import 'flutter_06/stack_widget.dart';
 // import 'flutter_07/wrap_widget.dart';
 // import 'flutter_07/flow_widget.dart';
-import 'flutter_08/list_view_widget.dart';
+import 'flutter_08/grid_view_widget.dart';
 
 void main() => runApp(MyApp());
 
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: ListViewSample() //MyHomePage(title: 'Flutter Demo Home Page'),
+      home: GridViewSample() //MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
