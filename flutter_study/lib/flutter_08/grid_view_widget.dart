@@ -14,7 +14,7 @@ class _GridViewSampleState extends State<GridViewSample> {
       appBar: AppBar(
         title: Text('GridView Widget'),
       ),
-      body: gridView1(),
+      body: gridView3(),
     );
   }
 
@@ -29,22 +29,22 @@ class _GridViewSampleState extends State<GridViewSample> {
       crossAxisCount: 2,
       mainAxisSpacing: 10,
       children: <Widget>[
-        const Text('He\'d have you all unravel at the'),
-        const Text('Heed not the rabble'),
-        const Text('Sound of screams but the'),
-        const Text('Who scream'),
-        // Image.asset(
-        //   'lib/images/assets_image.jpg',
-        //   fit: BoxFit.cover,
-        // ),
-        // Image.asset(
-        //   'lib/images/assets_image.jpg',
-        //   fit: BoxFit.cover,
-        // ),
-        // Image.asset(
-        //   'lib/images/assets_image.jpg',
-        //   fit: BoxFit.cover,
-        // ),
+        Image.asset(
+          'lib/images/assets_image.jpg',
+          fit: BoxFit.cover,
+        ),
+        Image.asset(
+          'lib/images/assets_image.jpg',
+          fit: BoxFit.cover,
+        ),
+        Image.asset(
+          'lib/images/assets_image.jpg',
+          fit: BoxFit.cover,
+        ),
+        Image.asset(
+          'lib/images/assets_image.jpg',
+          fit: BoxFit.cover,
+        ),
       ],
     );
   }
@@ -85,7 +85,119 @@ class _GridViewSampleState extends State<GridViewSample> {
   }
 
 
-  /// GridView. 
+  /// GridView.builder 构造
+  Widget gridView3() {
+    return GridView.builder(
+      padding: EdgeInsets.all(10),
+      // item总数
+      itemCount: 30,
+      // 构建item
+      itemBuilder: (BuildContext context, int index) {
+        // GridTile可以构造带有头部、底部、中间内容的item
+        return GridTile(
+          header: GridTileBar(
+            title: Text(
+              'header',
+              style: TextStyle(color: Colors.green)
+            ),
+            subtitle: Text(
+              'subtitle',
+              style: TextStyle(color: Colors.blueGrey)
+            ),
+          ),
+          child: Image.asset(
+            'lib/images/assets_image.jpg',
+            fit: BoxFit.cover,
+          ),
+          footer: GridTileBar(
+            title: Text(
+              'bottom',
+              style: TextStyle(
+                backgroundColor: Colors.black
+              )
+            ),
+          ),
+        );
+      },
 
+      // GridView排列属性设置
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 3,
+        crossAxisSpacing: 10.0,
+        mainAxisSpacing: 10.0
+      ),
+    );
+  } 
+
+
+  /// GridView.custom  构建
+  Widget gridView4() {
+    return GridView.custom(
+      // 设置GridView属性
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10
+      ),
+
+      // 设置item属性
+      childrenDelegate: SliverChildBuilderDelegate((BuildContext context, int index) {
+        return Container(
+          child: Text('data $index'),
+          color: Colors.green,
+        );
+      }, childCount: 20)
+    );
+  }
+
+
+  ///GridView.extent构建GridView，根据最大宽度自动计算item数量 
+  Widget gridView5() {
+    return GridView.extent(
+      // item最大宽度
+      maxCrossAxisExtent: 180,
+      crossAxisSpacing: 10,
+      mainAxisSpacing: 10,
+      childAspectRatio: 1,
+      children: <Widget>[
+        GridTile(
+          child: Image.asset(
+            'lib/images/assets_image.jpg',
+            fit: BoxFit.cover,
+          ),
+        ),
+        GridTile(
+          child: Image.asset(
+            'lib/images/assets_image.jpg',
+            fit: BoxFit.cover,
+          ),
+        ),
+        GridTile(
+          child: Image.asset(
+            'lib/images/assets_image.jpg',
+            fit: BoxFit.cover,
+          ),
+        ),
+        GridTile(
+          child: Image.asset(
+            'lib/images/assets_image.jpg',
+            fit: BoxFit.cover,
+          ),
+        ),
+        GridTile(
+          child: Image.asset(
+            'lib/images/assets_image.jpg',
+            fit: BoxFit.cover,
+          ),
+        ),
+        GridTile(
+          child: Image.asset(
+            'lib/images/assets_image.jpg',
+            fit: BoxFit.cover,
+          ),
+        ),
+      ],
+    );
+  }
 
 }
